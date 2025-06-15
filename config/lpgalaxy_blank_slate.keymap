@@ -8,6 +8,36 @@
 / {
     chosen { zmk,physical-layout = &layout_ortho_4x12_2x2u; };
 
+    macros {
+        Name: Name {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(P) &kp A &kp T &kp SPACE &kp LS(C) &kp U &kp N &kp N &kp I &kp F &kp F>;
+            label = "NAME";
+        };
+
+        Email: Email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp P &kp J &kp C &kp F &kp I &kp F &kp A &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "EMAIL";
+        };
+
+        VimSearch: VimSearch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp COLON &kp S &kp FSLH>;
+            label = "VIMSEARCH";
+        };
+
+        QuoteSurround: QuoteSurround {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp COLON &kp S &kp FSLH &kp BSLH &kp BSLH &kp PRCNT &kp LS(V) &kp BSLH &kp BSLH &kp LPAR &kp DOT &kp STAR &kp BSLH &kp BSLH &kp RPAR &kp BSLH &kp BSLH &kp PRCNT &kp LS(V) &kp BSLH &kp BSLH &kp LPAR &kp DOT &kp BSLH &kp BSLH &kp RPAR &kp FSLH &kp BSLH &kp DQT &kp BSLH &kp BSLH &kp N1 &kp BSLH &kp BSLH &kp N2 &kp BSLH &kp DQT &kp FSLH>;
+            label = "QUOTESURROUND";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -25,7 +55,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans     &kp GRAVE     &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(PLUS)  &kp LS(DQT)    &trans
 &trans  &trans  &trans  &trans  &trans  &trans     &kp LS(PIPE)  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL     &kp LS(COLON)  &trans
 &trans  &trans  &trans  &trans  &trans  &kp LC(B)  &trans        &kp LBKT      &kp RBKT      &kp MINUS     &kp LS(UNDER)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &trans        &kp X         &trans        &trans        &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans        &trans        &trans        &trans        &trans         &trans
             >;
         };
 
@@ -58,29 +88,38 @@
 
         Macro {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &Email  &VimSearch  &trans  &trans  &trans  &trans  &trans  &QuoteSurround  &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &Name   &trans  &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans          &trans
             >;
         };
 
         Double {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LS(LT)  &kp LS(GT)  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans  &trans
             >;
         };
 
         Corner {
             bindings = <
 &bootloader  &trans     &trans     &trans         &trans  &trans  &trans  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans       &trans     &trans     &trans         &trans  &trans  &trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
 &trans       &trans     &trans     &trans         &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
-&trans       &trans     &trans     &trans         &trans  &trans  &trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT(4)  &trans
 &trans       &mkp RCLK  &mkp LCLK  &kp C_AC_UNDO  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Double {
+            if-layers = <1 3>;
+            then-layer = <6>;
         };
     };
 };

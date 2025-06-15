@@ -11,9 +11,9 @@ manifest:
     - name: petejohanson
       url-base: https://github.com/petejohanson
   projects:
-    - name: ftc
-      remote: ftc
-      revision: mouse-ftc
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: blank-slate-zmk-module
       remote: petejohanson

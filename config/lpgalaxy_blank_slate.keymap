@@ -65,11 +65,12 @@
             bindings = <&caps_word>;
             key-positions = <24 35>;
         };
-          qq_layer_combo {
+
+        qq_layer_combo {
             timeout-ms = <200>;
             key-positions = <Q Q>;
-            bindings = <&oneshot_layer 6>;
-          };
+            bindings = <&sl 5>;
+        };
     };
 
     keymap {

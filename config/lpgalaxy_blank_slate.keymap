@@ -5,10 +5,5 @@
 
     keymap {
         compatible = "zmk,keymap";
-
-        base_layer {
-            label = "Base";
-            bindings = <>;
-        };
     };
 };

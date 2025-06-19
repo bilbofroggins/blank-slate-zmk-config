@@ -60,10 +60,11 @@
         osmmo: osmmo {
             compatible = "zmk,behavior-hold-tap";
             label = "OSMMO";
-            bindings = <&mo>, <&sk>;
+            bindings = <&mo>, <&oneshot_control>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <0>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 

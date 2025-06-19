@@ -83,7 +83,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans     &kp GRAVE     &kp LS(LBRC)  &kp LS(RBRC)  &kp LS(PLUS)  &kp LS(DQT)    &trans
 &trans  &trans  &trans  &trans  &trans  &trans     &kp LS(PIPE)  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL     &kp LS(COLON)  &kp LS(RETURN)
-&trans  &trans  &trans  &trans  &trans  &kp LC(B)  &trans        &kp LBKT      &kp RBKT      &kp MINUS     &kp LS(UNDER)  &trans
+&trans  &trans  &trans  &trans  &trans  &kp LC(B)  &trans        &kp LBKT      &kp RBKT      &kp MINUS     &kp BACKSLASH  &trans
 &trans  &trans  &trans  &trans  &trans  &trans     &trans        &trans        &trans        &trans        &trans         &trans
             >;
         };
@@ -99,10 +99,10 @@
 
         Numpad {
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6         &kp N7  &kp N8  &kp N9  &kp N0    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp SEMICOLON  &kp N4  &kp N5  &kp N6  &kp SEMI  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans         &kp N1  &kp N2  &kp N3  &kp BSLH  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp N0         &trans  &trans  &trans  &trans    &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6         &kp N7  &kp N8  &kp N9  &kp N0          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp SEMICOLON  &kp N4  &kp N5  &kp N6  &kp SEMI        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans         &kp N1  &kp N2  &kp N3  &kp UNDERSCORE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp N0         &trans  &trans  &trans  &trans          &trans
             >;
         };
 

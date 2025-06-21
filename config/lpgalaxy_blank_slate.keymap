@@ -59,7 +59,7 @@
         sticky_quickrelease: sticky-key {
           compatible = "zmk,behavior-sticky-key";
           label = "STICKY_QR";
-          bindings = <&kp LEFT_SHIFT>;
+          bindings = <&kp LSFT>;
           quick-release;
         };
         osmmo: osmmo {

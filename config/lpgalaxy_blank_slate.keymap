@@ -61,6 +61,8 @@
       label = "STICKY_QR";
       #binding-cells = <1>;
       quick-release;
+      bindings = <&kp>;    /* ← required */
+
     };
 
     osmmo: behavior_hold_tap {
@@ -69,6 +71,8 @@
       #binding-cells = <2>;
       tapping-term-ms = <200>;
       flavor = "tap-preferred";
+      bindings = <&mo>, <&sticky_qr>;  /* ← required */
+
     };
 
     };

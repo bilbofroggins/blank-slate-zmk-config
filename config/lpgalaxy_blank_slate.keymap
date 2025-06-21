@@ -56,16 +56,22 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
-
+        sticky_shift: sticky-key {
+          compatible = "zmk,behavior-sticky-key";
+          label = "STICKY_SHIFT";
+          bindings = <&kp LSFT>;
+          quick-release;
+        };
         osmmo: osmmo {
             compatible = "zmk,behavior-hold-tap";
             label = "OSMMO";
-            bindings = <&mo>, <&sk>;
+            bindings = <&mo>, <&sticky_shift>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
     };
 
     combos {

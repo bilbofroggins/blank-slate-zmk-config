@@ -59,15 +59,13 @@
         sticky_quickrelease: sticky-key {
           compatible = "zmk,behavior-sticky-key";
           label = "STICKY_QR";
-          bindings = <&kp 0>;
-          #binding-cells = <1>;
+          bindings = <&kp LEFT_SHIFT>;
           quick-release;
         };
         osmmo: osmmo {
             compatible = "zmk,behavior-hold-tap";
             label = "OSMMO";
-            bindings = <&mo 0>, <&sticky_quickrelease 0>;
-            #binding-cells = <2>;
+            bindings = <&mo 3>, <&sticky_quickrelease>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
@@ -91,7 +89,7 @@
 &lt 2 TAB  &kp Q             &kp W                 &kp E             &kp R                &kp T      &kp Y       &kp U  &kp I         &kp O    &kp P        &kp BSPC
 &mo 1      &kp A             &kp S                 &kp D             &kp F                &kp G      &kp H       &kp J  &kp K         &kp L    &QuoteColon  &kp RET
 &kp LSHFT  &kp Z             &kp X                 &kp C             &kp V                &kp B      &kp N       &kp M  &CommaShift   &kp DOT  &kp FSLH     &kp RSHFT
-&mo 7      &kp LEFT_CONTROL  &kp LS(LC(LG(LALT)))  &kp LEFT_COMMAND  &osmmo 3 LEFT_SHIFT  &kp SPACE  &kp ESCAPE  &mo 4  &kp LEFT_ALT  &mo 5    &trans       &trans
+&mo 7      &kp LEFT_CONTROL  &kp LS(LC(LG(LALT)))  &kp LEFT_COMMAND  &osmmo  &kp SPACE  &kp ESCAPE  &mo 4  &kp LEFT_ALT  &mo 5    &trans       &trans
             >;
         };
 

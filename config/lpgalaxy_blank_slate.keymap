@@ -60,7 +60,7 @@
           compatible = "zmk,behavior-sticky-key";
           label = "STICKY_QR";
           bindings = <&kp 0>;
-          #binding-cells = <1>
+          #binding-cells = <1>;
           quick-release;
         };
         osmmo: osmmo {

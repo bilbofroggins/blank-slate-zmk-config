@@ -127,10 +127,10 @@
 
         Macro {
             bindings = <
-&trans  &trans  &QuoteSurround  &Email  &VimSearch  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans  &trans      &trans  &Name   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &QuoteSurround  &Email  &VimSearch  &trans  &trans  &trans  &trans  &trans          &kp UP_ARROW  &trans
+&trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW
+&trans  &trans  &trans          &trans  &trans      &trans  &Name   &trans  &trans  &trans          &trans        &trans
+&trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans  &trans          &trans        &trans
             >;
         };
 

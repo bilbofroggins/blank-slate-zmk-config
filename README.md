@@ -1,3 +1,5 @@
+[Configurator](https://nickcoutsos.github.io/keymap-editor/)
+
 # Blank Slate ZMK Firmware
 
 This repo contains the firmware for the Blank Slate PCB.

@@ -39,6 +39,7 @@
     };
 
     behaviors {
+tapping-term-ms = <50>; 
         CommaShift: CommaShift {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMASHIFT";

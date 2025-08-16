@@ -62,7 +62,7 @@ UnderscoreLT: UnderscoreLT {
     label = "UNDERSCORE_LT";
     bindings = <&kp>, <&mo>;
     #binding-cells = <2>;
-    tapping-term-ms = <10>;    /* your fast tapping term */
+    tapping-term-ms = <500>;    /* your fast tapping term */
     flavor = "tap-preferred";   /* makes tapping faster than hold detection */
 };
 

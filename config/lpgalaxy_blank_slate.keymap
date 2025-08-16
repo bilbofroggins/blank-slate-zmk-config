@@ -57,6 +57,15 @@
             mods = <(MOD_LSFT)>;
         };
 
+UnderscoreLT: UnderscoreLT {
+    compatible = "zmk,behavior-hold-tap";
+    label = "UNDERSCORE_LT";
+    bindings = <&kp LS(MINUS)>, <&mo 1>;
+    #binding-cells = <2>;
+    tapping-term-ms = <250>;    /* your fast tapping term */
+    flavor = "tap-preferred";   /* makes tapping faster than hold detection */
+};
+
         osmmo: osmmo {
             compatible = "zmk,behavior-hold-tap";
             label = "OSMMO";
@@ -83,7 +92,7 @@
         Base {
             bindings = <
 &lt 2 TAB  &kp Q             &kp W                 &kp E             &kp R                &kp T      &kp Y       &kp U         &kp I        &kp O    &kp P        &kp BSPC
-&lt 1 LS(MINUS)      &kp A             &kp S                 &kp D             &kp F                &kp G      &kp H       &kp J         &kp K        &kp L    &QuoteColon  &kp RET
+&UnderscoreLT     &kp A             &kp S                 &kp D             &kp F                &kp G      &kp H       &kp J         &kp K        &kp L    &QuoteColon  &kp RET
 &kp LSHFT  &kp Z             &kp X                 &kp C             &kp V                &kp B      &kp N       &kp M         &CommaShift  &kp DOT  &kp FSLH     &kp RSHFT
 &mo 7      &kp LEFT_CONTROL  &kp LS(LC(LG(LALT)))  &kp LEFT_COMMAND  &osmmo 3 LEFT_SHIFT  &kp SPACE  &kp ESCAPE  &kp LEFT_ALT  &mo 5        &mo 4    &trans       &trans
             >;

@@ -39,15 +39,6 @@
     };
 
     behaviors {
-        CommaShift: CommaShift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMASHIFT";
-            bindings = <&kp COMMA>, <&kp TILDE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
         QuoteColon: QuoteColon {
             compatible = "zmk,behavior-mod-morph";
             label = "QUOTECOLON";
